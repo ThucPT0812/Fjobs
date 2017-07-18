@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Fjobs.iml" filepath="$PROJECT_DIR$/Fjobs.iml" />
       <module fileurl="file://$PROJECT_DIR$/JobsNetwork/JobsNetwork.iml" filepath="$PROJECT_DIR$/JobsNetwork/JobsNetwork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third party/okhttp/okhttp.iml" filepath="$PROJECT_DIR$/third party/okhttp/okhttp.iml" />
     </modules>
   </component>
 </project>

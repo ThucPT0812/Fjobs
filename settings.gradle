@@ -1,1 +1,2 @@
-include ':JobsNetwork'
+include ':JobsNetwork', ':okhttp'
+project(':okhttp').projectDir = new File('third party/okhttp')
