@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/signup_background" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitEnd"
+        android:src="@drawable/bg_bottom_signup" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space_largest"
+        android:paddingRight="@dimen/space_largest"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/activity_signup_btn_signup"
+            style="@style/button_primary_highlight"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_small"
+            android:text="@string/signup_sign_up" />
+
+        <RelativeLayout
+            android:id="@+id/activity_signup_connect_fb"
+            style="@style/button_login_by_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="@dimen/space_large"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:drawableLeft="@drawable/ic_facebook"
+                android:drawablePadding="@dimen/space_smaller"
+                android:gravity="center"
+                android:text="@string/signup_facebook"
+                android:textColor="@color/base_color"
+                android:textSize="@dimen/normal_text" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/text_view_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/space_smaller"
+            android:text="@string/signup_facebook_description"
+            android:textSize="@dimen/smaller_text"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/space_largest"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_alignParentLeft="true"
+                android:id="@+id/activity_signup_btn_login"
+                style="@style/button_transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_log_in"
+                android:textSize="@dimen/normal_text"
+                android:textColor="@color/base_color" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
