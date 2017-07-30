@@ -34,4 +34,5 @@ ext {
     // App dependencies
     okHTTPVersion = "3.8.0"
     gsonVersion = "2.8.0"
+    multidexVersion = "1.0.1"
 }

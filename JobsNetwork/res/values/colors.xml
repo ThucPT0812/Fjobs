@@ -11,4 +11,8 @@
     <color name="btn_fb_color">#3b5998</color>
     <color name="basic_text_color">#404040</color>
     <color name="light_text_color">#bcbbbb</color>
+    <color name="primary_background">@color/white</color>
+    <color name="primary">@color/base_color</color>
+    <color name="border">#bcbbbb</color>
+    <color name="secondary_background">#ffffff</color>
 </resources>

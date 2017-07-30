@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background"
+    android:orientation="vertical" >
+
+    <include
+        layout="@layout/actionbar_only_back" />
+
+    <EditText
+        android:id="@+id/email"
+        style="@style/edit_text_list_top"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_larger"
+        android:hint="@string/common_email_address"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <View
+        android:background="@color/border"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/edit_text_list_bottom"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_larger"
+        android:hint="@string/common_password"
+        android:inputType="textPassword" />
+
+    <View
+        android:background="@color/border"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/button_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space_large"
+        android:paddingBottom="@dimen/space_large"
+        android:layout_marginLeft="@dimen/space_extra_x_large"
+        android:layout_marginRight="@dimen/space_extra_x_large"
+        android:layout_marginTop="@dimen/space_extreme_large"
+        android:text="@string/login_login_button"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/text_view_forgot_pass"
+        style="@style/text_view_secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_extreme_large"
+        android:text="@string/login_forgot"/>
+
+</LinearLayout>

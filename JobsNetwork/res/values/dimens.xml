@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="space_extra_x_large">36dp</dimen>
+    <dimen name="space_extreme_large">32dp</dimen>
     <dimen name="space_largest">20dp</dimen>
     <dimen name="space_larger">16dp</dimen>
     <dimen name="space_large">12dp</dimen>
+    <dimen name="space_normal">10dp</dimen>
     <dimen name="space_small">8dp</dimen>
     <dimen name="space_smaller">6dp</dimen>
+    <dimen name="space_smallest">4dp</dimen>
 
     <dimen name="large_text">18sp</dimen>
     <dimen name="normal_text">16sp</dimen>
     <dimen name="smaller_text">12sp</dimen>
 
     <dimen name="corner_full">29dp</dimen>
+    <dimen name="corner_small">4dp</dimen>
 
     <dimen name="button_height">58dp</dimen>
     <dimen name="button_height_small">52dp</dimen>
