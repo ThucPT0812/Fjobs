@@ -39,7 +39,7 @@ public abstract class Response implements Cloneable, Serializable {
     public static final int SERVER_SEND_MAIL_FAIL = 13;
     public static final int SERVER_INVALID_USER_NAME = 14;
     public static final int SERVER_INVALID_BIRTHDAY = 15;
-    public static final int SERVER_INCORRECT_PASSWORD = 20;
+    public static final int SERVER_INCORRECT_PASSWORD = 1;
     public static final int SERVER_INVALID_PASSWORD = 21;
     public static final int SERVER_UPLOAD_IMAGE_ERROR = 30;
     public static final int SERVER_UPLOAD_FILE_ERROR = 35;

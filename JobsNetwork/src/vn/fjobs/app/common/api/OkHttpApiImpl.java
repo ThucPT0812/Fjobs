@@ -67,10 +67,12 @@ public class OkHttpApiImpl implements Api {
         Request.Builder request = new Request.Builder()
                 .url(url)
                 .headers(baseRequest.getHeaders());
-        if (baseRequest.getMethod() == Method.GET)
+        if (baseRequest.getMethod() == Method.GET){
             request.method(ApiKey.API_METHOD_GET, null);
-        else
+        }else{
             request.method(ApiKey.API_METHOD_POST, baseRequest.getBody());
+        }
+
         return request;
     }
 

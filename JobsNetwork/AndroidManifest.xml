@@ -6,6 +6,7 @@
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />    <!-- Connect to internet -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="vn.fjobs.app.BaseApp"
@@ -29,12 +30,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="vn.fjobs.app.firstscreen.SignUpActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
+        <activity
+            android:name="vn.fjobs.app.firstscreen.SignUpActivity"
+            android:label="@string/common_app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+            android:taskAffinity="com.account" >
 
         </activity>
 
@@ -44,6 +45,14 @@
             android:screenOrientation="portrait"
             android:taskAffinity="com.account"
             android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="vn.fjobs.app.login.LoginActivity"
+            android:label="@string/common_app_name"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.account"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysVisible" />
     </application>
 
 </manifest>

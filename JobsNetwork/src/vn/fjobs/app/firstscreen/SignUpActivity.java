@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
+import vn.fjobs.app.login.LoginActivity;
 import vn.fjobs.app.register.RegisterActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
 
@@ -51,6 +52,9 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener {
         switch (view.getId()){
             case R.id.activity_signup_btn_signup:
                 startRegisterActivity();
+                break;
+            case R.id.activity_signup_btn_login:
+                startCustomActivityForResult(new Intent(this, LoginActivity.class));
                 break;
         }
     }
