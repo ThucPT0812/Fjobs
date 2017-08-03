@@ -31,7 +31,7 @@ public class Config{
     static {
         if (mServer == SERVER.PRODUCT) {
             // Product server
-            SERVER_URL = "http://101.96.122.12/FJobsServer/fjobs/mainservice/FJobsAPI";
+            SERVER_URL = "http://101.96.122.12:1313/FJobsServer/fjobs/mainservice/FJobsAPI";
         }
     }
 }

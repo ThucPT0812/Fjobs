@@ -39,8 +39,7 @@ public abstract class RequestParams implements Serializable {
 
     public RequestBody getBody() {
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        RequestBody body = RequestBody.create(JSON, toString());
-        return body;
+        return RequestBody.create(JSON, toString());
     }
 
     public String getToken() {

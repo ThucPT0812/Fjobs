@@ -1,5 +1,6 @@
 package vn.fjobs.app.login.response;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,17 +22,18 @@ public class LoginResponse extends Response {
         try{
             JSONObject jsonObject = responseData.getJSONObject();
             if (jsonObject != null) {
-                if (jsonObject.has("code")) {
-                    setCode(jsonObject.getInt("code"));
-                }
-
                 if (jsonObject.has("data")) {
-                    JSONObject dataJson = jsonObject.getJSONObject("data");
-                    authenData = new AuthenticationData();
-
-                    if (dataJson.has("token")) {
-                        authenData.setToken(dataJson.getString("token"));
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+                    JSONObject objectJson = jsonArray.getJSONObject(0);
+                    if (objectJson.has("errorcode")) {
+                        setCode(objectJson.getInt("errorcode"));
                     }
+//                    JSONObject dataJson = jsonObject.getJSONObject("data");
+//                    authenData = new AuthenticationData();
+//
+//                    if (dataJson.has("token")) {
+//                        authenData.setToken(dataJson.getString("token"));
+//                    }
                 }
             }
         }catch (JSONException e){

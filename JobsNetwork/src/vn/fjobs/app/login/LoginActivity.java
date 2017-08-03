@@ -71,7 +71,7 @@ public class LoginActivity extends BaseAppActivity implements ResponseReceiver, 
         String password = this.password.getText().toString();
         password = Utility.encryptPassword(password);
 
-        LoginRequest loginRequest = new LoginRequest(email, password, Constant.LOADER_LOGIN);
+        LoginRequest loginRequest = new LoginRequest(email, password, String.valueOf(Constant.LOADER_LOGIN));
         api.startRequest(Constant.LOADER_LOGIN, loginRequest,this);
         progressDialog.show();
     }
