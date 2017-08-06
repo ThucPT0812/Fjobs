@@ -15,4 +15,8 @@ public class LogUtils {
     public static void w(String tag, String msg) {
         Log.w(tag, msg);
     }
+
+    public static void e(String tag, String msg) {
+        Log.e(tag, msg);
+    }
 }

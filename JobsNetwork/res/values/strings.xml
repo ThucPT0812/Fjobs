@@ -9,11 +9,16 @@
     <string name="alert">Warning</string>
     <string name="msg_common_password_is_incorrect">E-mail address or password is wrong.</string>
     <string name="common_yes">Yes</string>
+    <string name="common_birthday">Brith day</string>
+    <string name="common_gender">Gender</string>
+    <string name="common_man">Male</string>
+    <string name="common_woman">Female</string>
 
     <!-- Screen SignUp -->
     <string name="signup_sign_up">Start right away（Free）</string>
     <string name="signup_facebook">Login With Facebook</string>
-    <string name="signup_facebook_description">There will be no public availability on Facebook </string>
+    <string name="signup_google">Login With Google</string>
+    <string name="signup_facebook_description">There will be no public availability on Facebook or Google</string>
     <string name="signup_log_in">Login</string>
 
     <!-- Action bar-->
@@ -30,4 +35,32 @@
     <string name="email_invalid_format">Invalid email address format</string>
     <string name="email_length_must_than">Mail length must be within %1$s characters!</string>
     <string name="password_length_must_than">The length of the password is from %1$s to %2$s!</string>
+
+    <!-- Register Activity -->
+    <string name="title_register">Account Registration</string>
+    <string name="btn_register">I agree and register</string>
+    <string name="btn_user_agreement"><u>Terms of service</u></string>
+    <string name="btn_privacy_policy"><u>Privacy policy</u></string>
+    <string name="creating_account_please_wait">You have to create an account. Please wait…</string>
+    <string name="profile_reg_name">Nickname</string>
+    <string name="profile_reg_email">Email</string>
+    <string name="profile_reg_pass">Password</string>
+    <string name="profile_reg_confirm_pass">Confirm pass</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="common_enter_name">Enter name</string>
+    <string name="email_hint_first">Mail address</string>
+    <string name="first_password_hint">Password</string>
+    <string name="btn_register_send_code">Register</string>
+    <string name="verify_code_empty">Please enter authentication code</string>
+
+    <!-- Profile -->
+    <string name="setup_profile">Profile Setting</string>
+    <string name="birthday_value_is_invalid">Invalid birthday value.</string>
+    <string name="gender_is_invalid">Gender is blank.</string>
+
+    <!-- Send code activity -->
+    <string name="title_send_code">Authentication code</string>
+    <string name="type_verify_code">Code</string>
+    <string name="enter_code_hint">Enter here</string>
+
 </resources>

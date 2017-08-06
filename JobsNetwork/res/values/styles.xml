@@ -14,6 +14,8 @@
         <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
 
+    <!-- ===================== Style button ============================== -->
+
     <style name="button_primary_highlight" parent="@style/btn_standard_compat">
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/btn_primary_highlight</item>
@@ -37,27 +39,6 @@
         <item name="android:background">@drawable/btn_login_by_facebook</item>
     </style>
 
-    <style name="text_view_secondary" parent="@style/text_view_default">
-        <item name="android:textSize">@dimen/smaller_text</item>
-        <item name="android:textColor">@color/light_text_color</item>
-        <item name="android:paddingLeft">@dimen/space_small</item>
-        <item name="android:paddingRight">@dimen/space_small</item>
-    </style>
-
-    <style name="text_view_default" parent="text_small">
-        <item name="android:typeface">sans</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:background">@android:color/transparent</item>
-    </style>
-
-    <style name="text_small">
-        <item name="android:textSize">@dimen/smaller_text</item>
-        <item name="android:textColor">@color/basic_text_color</item>
-        <item name="android:textStyle">normal</item>
-    </style>
-
     <style name="button_transparent" parent="@style/btn_standard">
         <item name="android:background">@android:color/transparent</item>
     </style>
@@ -73,11 +54,41 @@
         <item name="android:paddingRight">@dimen/space_larger</item>
     </style>
 
-    <style name="text_large">
-        <item name="android:textSize">@dimen/large_text</item>
-        <item name="android:textColor">@color/basic_text_color</item>
-        <item name="android:textStyle">normal</item>
+    <style name="button_primary" parent="@style/btn_standard_compat">
+        <item name="android:background">@drawable/btn_primary</item>
     </style>
+
+    <!-- ======================= Style Text View ====================================== -->
+
+    <style name="text_view_secondary" parent="@style/text_view_default">
+        <item name="android:textSize">@dimen/smaller_text</item>
+        <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:paddingLeft">@dimen/space_small</item>
+        <item name="android:paddingRight">@dimen/space_small</item>
+    </style>
+
+    <style name="text_view_default" parent="text_small">
+        <item name="android:typeface">sans</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="text_view_title" parent="@style/text_view_default">
+        <item name="android:textColor">@color/heading_text_color</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:paddingLeft">@dimen/space_small</item>
+        <item name="android:paddingRight">@dimen/space_small</item>
+    </style>
+
+    <style name="text_view_primary" parent="@style/text_view_default">
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:paddingLeft">@dimen/space_small</item>
+        <item name="android:paddingRight">@dimen/space_small</item>
+    </style>
+
+    <!--==================== Style action bar =========================-->
 
     <style name="actionbar_title" parent="text_large">
         <item name="android:ellipsize">end</item>
@@ -88,6 +99,8 @@
         <item name="android:paddingLeft">@dimen/space_large</item>
         <item name="android:paddingRight">@dimen/space_large</item>
     </style>
+
+    <!--==================== Style Edit Text =========================-->
 
     <style name="edit_text_list_top" parent="@style/edit_text_primary">
         <item name="android:gravity">center_vertical</item>
@@ -108,15 +121,44 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="edit_text_password" parent="@style/edit_text_primary">
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <!--==================== Style Text =========================-->
+
+    <style name="text_small">
+        <item name="android:textSize">@dimen/smaller_text</item>
+        <item name="android:textColor">@color/basic_text_color</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <style name="text_normal">
         <item name="android:textSize">@dimen/normal_text</item>
         <item name="android:textColor">@color/basic_text_color</item>
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="button_primary" parent="@style/btn_standard_compat">
-        <item name="android:background">@drawable/btn_primary</item>
+    <style name="text_large">
+        <item name="android:textSize">@dimen/large_text</item>
+        <item name="android:textColor">@color/basic_text_color</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
+    <!-- ===================== Style list ================================ -->
+
+    <style name="list_default">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="list_bottom" parent="@style/list_default">
+        <item name="android:background">@drawable/list_bottom</item>
+    </style>
+
+    <!-- ======================= Style Edit profile =====================-->
+    <style name="marginLeftRight_editProfile">
+        <item name="android:layout_marginLeft">@dimen/space_normal</item>
+        <item name="android:layout_marginRight">@dimen/space_normal</item>
+    </style>
 
 </resources>

@@ -15,4 +15,5 @@
     <color name="primary">@color/base_color</color>
     <color name="border">#bcbbbb</color>
     <color name="secondary_background">#ffffff</color>
+    <color name="heading_text_color">#404040</color>
 </resources>

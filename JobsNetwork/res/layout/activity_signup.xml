@@ -37,25 +37,55 @@
             android:layout_marginTop="@dimen/space_small"
             android:text="@string/signup_sign_up" />
 
-        <RelativeLayout
-            android:id="@+id/activity_signup_connect_fb"
-            style="@style/button_login_by_facebook"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height_small"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_large"
-            android:clickable="true">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/ic_facebook"
-                android:drawablePadding="@dimen/space_smaller"
-                android:gravity="center"
-                android:text="@string/signup_facebook"
-                android:textColor="@color/base_color"
-                android:textSize="@dimen/normal_text" />
-        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/activity_signup_connect_fb"
+                style="@style/button_login_by_facebook"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/button_height_small"
+
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/ic_facebook"
+                    android:drawablePadding="@dimen/space_smaller"
+                    android:gravity="center"
+                    android:text="@string/signup_facebook"
+                    android:textColor="@color/base_color"
+                    android:textSize="@dimen/normal_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/activity_signup_connect_google"
+                style="@style/button_login_by_facebook"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/space_smallest"
+                android:layout_height="@dimen/button_height_small"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/ic_google"
+                    android:drawablePadding="@dimen/space_smaller"
+                    android:gravity="center"
+                    android:text="@string/signup_google"
+                    android:textColor="@color/base_color"
+                    android:textSize="@dimen/normal_text" />
+            </RelativeLayout>
+
+        </LinearLayout>
 
         <TextView
             style="@style/text_view_secondary"

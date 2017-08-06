@@ -20,11 +20,11 @@ import vn.fjobs.base.view.customeview.ErrorApiDialog;
 
 public class LoginActivity extends BaseAppActivity implements ResponseReceiver, View.OnClickListener {
 
-    protected Button login;
+    private Button login;
     private EditText email;
     private EditText password;
-    protected TextView forgotPassword;
-    protected ProgressDialog progressDialog;
+    private TextView forgotPassword;
+    private ProgressDialog progressDialog;
 
     protected TextView titleToolbar;
 
@@ -154,7 +154,11 @@ public class LoginActivity extends BaseAppActivity implements ResponseReceiver, 
 
     @Override
     public void onClick(View view) {
-
+        switch (view.getId()){
+            case R.id.actionbar_left:
+                finish();
+                break;
+        }
     }
 
     private void loginSuccess(LoginResponse loginResponse) {

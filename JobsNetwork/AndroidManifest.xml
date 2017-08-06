@@ -40,6 +40,14 @@
         </activity>
 
         <activity
+            android:name="vn.fjobs.app.login.LoginActivity"
+            android:label="@string/common_app_name"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.account"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+
+        <activity
             android:name="vn.fjobs.app.register.RegisterActivity"
             android:label="@string/common_app_name"
             android:screenOrientation="portrait"
@@ -47,12 +55,12 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="vn.fjobs.app.login.LoginActivity"
+            android:name="vn.fjobs.app.register.SendCodeActivity"
             android:label="@string/common_app_name"
             android:screenOrientation="portrait"
             android:taskAffinity="com.account"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateAlwaysVisible" />
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
