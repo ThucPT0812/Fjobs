@@ -17,7 +17,7 @@
     <!-- Screen SignUp -->
     <string name="signup_sign_up">Start right away（Free）</string>
     <string name="signup_facebook">Login With Facebook</string>
-    <string name="signup_google">Login With Google</string>
+    <string name="signup_google">Login \n With Google</string>
     <string name="signup_facebook_description">There will be no public availability on Facebook or Google</string>
     <string name="signup_log_in">Login</string>
 

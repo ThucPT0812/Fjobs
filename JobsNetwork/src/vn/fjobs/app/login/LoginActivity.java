@@ -25,7 +25,6 @@ public class LoginActivity extends BaseAppActivity implements ResponseReceiver, 
     private EditText password;
     private TextView forgotPassword;
     private ProgressDialog progressDialog;
-
     protected TextView titleToolbar;
 
     @Override

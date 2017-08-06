@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -60,4 +61,5 @@ dependencies {
     // google play service
     compile "com.android.support:multidex:$multidexVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
+    compile "com.google.android.gms:play-services-auth:$googleAuthVersion"
 }

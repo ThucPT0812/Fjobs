@@ -8,6 +8,7 @@ public class Constant {
     /*********************** Result request Code ************************/
     public static final int RESULT_EXIT                             = 100;
     public static final int REQUEST_EXIT                            = 101;
+    public static final int RC_SIGN_IN_GOOGLE                       = 102;
 
     /*********************** User setting ************************/
     public static final int MAX_EMAIL_LENGTH                        = 150;

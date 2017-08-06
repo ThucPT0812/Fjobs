@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1081884943971",
+    "project_id": "firebase-jobsnetwork"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081884943971:android:a1c28183108741c6",
+        "android_client_info": {
+          "package_name": "project.fjobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081884943971-5tvj232k1c82fbrc7p0t8anehim8ust6.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1081884943971-3o8ig2if55iss1iki8r87m1dqm8iv9a0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "project.fjobs",
+            "certificate_hash": "242b2eb71d018a0626b24b111c0b0b9158e22b35"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1zToYWUIlqTpZ0k7k9HP949rAGsQVtYM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

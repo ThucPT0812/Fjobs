@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="label,theme">
+
         <activity android:name="vn.fjobs.app.splash.SplashActivity"
             android:label="@string/common_app_name"
             android:screenOrientation="portrait"
