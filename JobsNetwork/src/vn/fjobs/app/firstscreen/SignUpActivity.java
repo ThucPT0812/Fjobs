@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -18,14 +20,23 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
+import vn.fjobs.app.common.entity.User;
 import vn.fjobs.app.common.util.LogUtils;
 import vn.fjobs.app.login.LoginActivity;
 import vn.fjobs.app.register.RegisterActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
 
-public class SignUpActivity extends BaseAppActivity implements OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+public class SignUpActivity extends BaseAppActivity implements OnClickListener, GoogleApiClient.OnConnectionFailedListener, FacebookLogin.OnDataResult {
 
     private static final String TAG = "SignUpActivity";
     private Button signUp;
@@ -33,13 +44,18 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
     private RelativeLayout loginByFacebook;
     private GoogleApiClient googleApiClient;
     private RelativeLayout loginByGoogle;
-    private boolean isLoginedGoogle = false;
+    private boolean isLoginEdGoogle = false;
+    protected FacebookLogin facebookLogin;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         initView();
+
+        facebookLogin = new AppFacebookLogin(this);
+        facebookLogin.initFacebook();
     }
 
     private void initView() {
@@ -97,14 +113,17 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
             case R.id.activity_signup_connect_google:
                 handlerLoginGoogleClick();
                 break;
+            case R.id.activity_signup_connect_fb:
+                facebookLogin.loginByFacebook();
+                break;
         }
     }
 
     private void handlerLoginGoogleClick(){
-        if(!isLoginedGoogle){
+        if(!isLoginEdGoogle){
             Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
             startActivityForResult(signInIntent, Constant.RC_SIGN_IN_GOOGLE);
-            isLoginedGoogle = true;
+            isLoginEdGoogle = true;
         }else{
 
             Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
@@ -114,7 +133,7 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
                             Toast.makeText(SignUpActivity.this, "Sign out google", Toast.LENGTH_LONG).show();
                         }
                     });
-            isLoginedGoogle = false;
+            isLoginEdGoogle = false;
         }
 
     }
@@ -149,5 +168,75 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResultGoogle(result);
         }
+
+        facebookLogin.onActivityResult(requestCode,resultCode,data);
+    }
+
+    @Override
+    public void onStartGetData() {
+        showProgressLoading();
+    }
+
+    @Override
+    public void onDataResult(JSONObject object, GraphResponse response, Profile profile) {
+        String name = "";
+        String gender = "";
+        String birthDay = "";
+        String userId = "";
+        String profilePictureUrl = "";
+
+        try {
+            if (object.has("name")) {
+                name = object.getString("name");
+            }
+            if (object.has("gender")) {
+                gender = object.getString("gender");
+            }
+            if (object.has("birthday")) {
+                birthDay = object.optString("birthday");
+            }
+            if (object.has("id")) {
+                userId = object.optString("id");
+            }
+
+            boolean isDefaultAvatar;
+            if (object.has("picture")) {
+                JSONObject picture = object.getJSONObject("picture");
+                if (picture.has("data")) {
+                    JSONObject data = picture.getJSONObject("data");
+                    isDefaultAvatar = !data.has("is_silhouette") || data.getBoolean("is_silhouette");
+                    profilePictureUrl = isDefaultAvatar ||  !data.has("url") ? "" : data.getString("url");
+                }
+            }
+
+            Profile currentProfile = profile != null ? profile : Profile.getCurrentProfile();
+            if (currentProfile != null) {
+                userId = currentProfile.getId();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        getFacebookUserInfo(name, profilePictureUrl, gender);
+        Toast.makeText(this, name, Toast.LENGTH_LONG).show();
+        dismissProgressLoading();
+    }
+
+    private void getFacebookUserInfo(String fullName, String profilePictureUri, String birthDay) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+        Date date = null;
+
+        if (birthDay != null) {
+            try {
+                date = dateFormat.parse(birthDay);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
+        user = new User();
+        user.setName(fullName);
+        user.setBirthday(date);
+        user.setAvatar(profilePictureUri);
+
     }
 }

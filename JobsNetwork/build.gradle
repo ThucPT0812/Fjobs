@@ -62,4 +62,5 @@ dependencies {
     compile "com.android.support:multidex:$multidexVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
     compile "com.google.android.gms:play-services-auth:$googleAuthVersion"
+    compile "com.facebook.android:facebook-android-sdk:$facebookVersion"
 }

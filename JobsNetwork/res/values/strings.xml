@@ -9,7 +9,7 @@
     <string name="alert">Warning</string>
     <string name="msg_common_password_is_incorrect">E-mail address or password is wrong.</string>
     <string name="common_yes">Yes</string>
-    <string name="common_birthday">Brith day</string>
+    <string name="common_birthday">Birth day</string>
     <string name="common_gender">Gender</string>
     <string name="common_man">Male</string>
     <string name="common_woman">Female</string>
