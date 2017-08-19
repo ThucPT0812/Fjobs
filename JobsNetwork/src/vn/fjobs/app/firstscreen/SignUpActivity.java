@@ -1,5 +1,6 @@
 package vn.fjobs.app.firstscreen;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,23 +31,27 @@ import java.util.Locale;
 
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
+import vn.fjobs.app.common.connection.Response;
+import vn.fjobs.app.common.connection.ResponseData;
 import vn.fjobs.app.common.entity.User;
+import vn.fjobs.app.common.preferences.UserPreferences;
 import vn.fjobs.app.common.util.LogUtils;
+import vn.fjobs.app.firstscreen.request.LoginFreeRequest;
+import vn.fjobs.app.firstscreen.response.LoginFreeResponse;
 import vn.fjobs.app.login.LoginActivity;
 import vn.fjobs.app.register.RegisterActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
+import vn.fjobs.base.api.ResponseReceiver;
 
-public class SignUpActivity extends BaseAppActivity implements OnClickListener, GoogleApiClient.OnConnectionFailedListener, FacebookLogin.OnDataResult {
+public class SignUpActivity extends BaseAppActivity implements OnClickListener, GoogleApiClient.OnConnectionFailedListener,
+        FacebookLogin.OnDataResult, ResponseReceiver {
 
     private static final String TAG = "SignUpActivity";
-    private Button signUp;
-    private Button login;
-    private RelativeLayout loginByFacebook;
     private GoogleApiClient googleApiClient;
-    private RelativeLayout loginByGoogle;
     private boolean isLoginEdGoogle = false;
     protected FacebookLogin facebookLogin;
     private User user;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +64,13 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
     }
 
     private void initView() {
-        login = (Button) findViewById(R.id.activity_signup_btn_login);
-        signUp = (Button) findViewById(R.id.activity_signup_btn_signup);
-        loginByFacebook = (RelativeLayout) findViewById(R.id.activity_signup_connect_fb);
-        loginByGoogle = (RelativeLayout) findViewById(R.id.activity_signup_connect_google);
-        signUp.setOnClickListener(this);
+        Button login = (Button) findViewById(R.id.activity_signup_btn_login);
+        Button signUpFree = (Button) findViewById(R.id.login_free);
+        RelativeLayout loginByFacebook = (RelativeLayout) findViewById(R.id.activity_signup_connect_fb);
+        RelativeLayout loginByGoogle = (RelativeLayout) findViewById(R.id.activity_signup_connect_google);
+        Button register = (Button)findViewById(R.id.activity_signup_btn_register);
+        register.setOnClickListener(this);
+        signUpFree.setOnClickListener(this);
         login.setOnClickListener(this);
         loginByFacebook.setOnClickListener(this);
         loginByGoogle.setOnClickListener(this);
@@ -79,6 +86,9 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
                 .enableAutoManage(this , this )
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage(getString(R.string.waiting));
     }
 
     @Override
@@ -104,8 +114,8 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.activity_signup_btn_signup:
-                startRegisterActivity();
+            case R.id.login_free:
+                loginFree();
                 break;
             case R.id.activity_signup_btn_login:
                 startCustomActivityForResult(new Intent(this, LoginActivity.class));
@@ -116,7 +126,16 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
             case R.id.activity_signup_connect_fb:
                 facebookLogin.loginByFacebook();
                 break;
+            case R.id.activity_signup_btn_register:
+                startRegisterActivity();
+                break;
         }
+    }
+
+    private void loginFree(){
+        LoginFreeRequest loginFreeRequest = new LoginFreeRequest(String.valueOf(Constant.LOADER_LOGIN_FREE), UserPreferences.getInstance().getToken());
+        api.startRequest(Constant.LOADER_LOGIN_FREE, loginFreeRequest, this);
+        progressDialog.show();
     }
 
     private void handlerLoginGoogleClick(){
@@ -237,6 +256,43 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
         user.setName(fullName);
         user.setBirthday(date);
         user.setAvatar(profilePictureUri);
+    }
+
+    @Override
+    public void startRequest(int requestId) {
+
+    }
+
+    @Override
+    public Response parseResponse(int requestId, ResponseData data) {
+        Response response = null;
+        switch (requestId){
+            case Constant.LOADER_LOGIN_FREE:
+                response = new LoginFreeResponse(data);
+                break;
+            default:
+                break;
+        }
+        return response;
+    }
+
+    @Override
+    public void receiveResponse(int requestId, Response response) {
+        if(progressDialog != null)
+            progressDialog.dismiss();
+
+        if(response == null){
+            return;
+        }
+        if(requestId == Constant.LOADER_LOGIN_FREE){
+            if(response.getCode() == Response.SERVER_SUCCESS){
+                LoginFreeResponse loginFreeResponse = (LoginFreeResponse) response;
+                loginSuccess(loginFreeResponse);
+            }
+        }
+    }
+
+    private void loginSuccess(LoginFreeResponse response){
 
     }
 }

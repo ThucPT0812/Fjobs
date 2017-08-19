@@ -141,7 +141,7 @@ public class LoginActivity extends BaseAppActivity implements ResponseReceiver, 
             return;
 
         if (requestId == Constant.LOADER_LOGIN) {
-            if (response.getCode() == Constant.LOADER_LOGIN) {
+            if (response.getCode() == Response.SERVER_SUCCESS) {
                 LoginResponse loginResponse = (LoginResponse) response;
                 loginSuccess(loginResponse);
 

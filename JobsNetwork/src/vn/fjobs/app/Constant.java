@@ -4,6 +4,7 @@ public class Constant {
 
     /*********************** Request ************************/
     public static final int LOADER_LOGIN                            = 101;
+    public static final int LOADER_LOGIN_FREE                       = 102;
 
     /*********************** Result request Code ************************/
     public static final int RESULT_EXIT                             = 100;
