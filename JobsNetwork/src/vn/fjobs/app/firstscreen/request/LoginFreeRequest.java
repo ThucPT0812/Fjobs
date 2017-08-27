@@ -6,9 +6,6 @@ import vn.fjobs.app.common.RequestParams;
 
 public class LoginFreeRequest extends RequestParams {
 
-    @SerializedName("token")
-    private String token;
-
     @SerializedName("codeid")
     private String codeID;
 

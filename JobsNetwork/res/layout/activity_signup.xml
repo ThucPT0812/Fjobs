@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/image_description"
         android:src="@drawable/signup_background" />
 
     <ImageView
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:scaleType="fitEnd"
+        android:contentDescription="@string/image_description"
         android:src="@drawable/bg_bottom_signup" />
 
     <LinearLayout
@@ -41,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_large"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -50,6 +53,7 @@
                 android:layout_weight="1"
                 android:layout_height="@dimen/button_height_small"
                 android:layout_marginLeft="@dimen/space_smallest"
+                android:layout_marginStart="@dimen/space_smallest"
                 android:clickable="true">
 
                 <TextView
@@ -57,6 +61,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:drawableLeft="@drawable/ic_facebook"
+                    android:drawableStart="@drawable/ic_facebook"
                     android:drawablePadding="@dimen/space_smaller"
                     android:gravity="center"
                     android:text="@string/signup_facebook"
@@ -70,6 +75,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="@dimen/space_smallest"
+                android:layout_marginStart="@dimen/space_smallest"
                 android:layout_height="@dimen/button_height_small"
                 android:clickable="true">
 
@@ -78,6 +84,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:drawableLeft="@drawable/ic_google"
+                    android:drawableStart="@drawable/ic_google"
                     android:drawablePadding="@dimen/space_smaller"
                     android:gravity="center"
                     android:text="@string/signup_google"
@@ -87,7 +94,7 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_marginTop="@dimen/space_large"
             android:layout_width="match_parent"
             android:layout_height="@dimen/list_height"
@@ -95,32 +102,26 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
                 android:id="@+id/activity_signup_btn_login"
                 style="@style/button_transparent"
-                android:layout_marginLeft="@dimen/space_extra_x_large"
-                android:layout_marginStart="@dimen/space_extra_x_large"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/signup_log_in"
                 android:textSize="@dimen/normal_text"
                 android:textColor="@color/base_color" />
 
             <Button
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/activity_signup_btn_register"
+                android:id="@+id/signup_btn_register"
                 style="@style/button_transparent"
-                android:layout_marginRight="@dimen/space_extra_x_large"
-                android:layout_marginEnd="@dimen/space_extra_x_large"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_register_send_code"
                 android:textSize="@dimen/normal_text"
                 android:textColor="@color/base_color" />
 
-        </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

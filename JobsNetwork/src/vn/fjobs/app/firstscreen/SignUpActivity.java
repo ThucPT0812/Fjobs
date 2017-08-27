@@ -68,7 +68,7 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
         Button signUpFree = (Button) findViewById(R.id.login_free);
         RelativeLayout loginByFacebook = (RelativeLayout) findViewById(R.id.activity_signup_connect_fb);
         RelativeLayout loginByGoogle = (RelativeLayout) findViewById(R.id.activity_signup_connect_google);
-        Button register = (Button)findViewById(R.id.activity_signup_btn_register);
+        Button register = (Button)findViewById(R.id.signup_btn_register);
         register.setOnClickListener(this);
         signUpFree.setOnClickListener(this);
         login.setOnClickListener(this);
@@ -126,14 +126,15 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
             case R.id.activity_signup_connect_fb:
                 facebookLogin.loginByFacebook();
                 break;
-            case R.id.activity_signup_btn_register:
+            case R.id.signup_btn_register:
                 startRegisterActivity();
                 break;
         }
     }
 
     private void loginFree(){
-        LoginFreeRequest loginFreeRequest = new LoginFreeRequest(String.valueOf(Constant.LOADER_LOGIN_FREE), UserPreferences.getInstance().getToken());
+        LoginFreeRequest loginFreeRequest = new LoginFreeRequest(String.valueOf(Constant.LOADER_LOGIN_FREE),
+                UserPreferences.getInstance().getToken());
         api.startRequest(Constant.LOADER_LOGIN_FREE, loginFreeRequest, this);
         progressDialog.show();
     }

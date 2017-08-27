@@ -13,6 +13,10 @@
     <string name="common_gender">Gender</string>
     <string name="common_man">Male</string>
     <string name="common_woman">Female</string>
+    <string name="type_user">Type User</string>
+    <string name="common_candidate">Candidate</string>
+    <string name="common_recruiter">Recruiter</string>
+    <string name="common_image_des">Image description</string>
 
     <!-- Screen SignUp -->
     <string name="signup_sign_up">Start right away（Free）</string>
@@ -52,11 +56,18 @@
     <string name="first_password_hint">Password</string>
     <string name="btn_register_send_code">Register</string>
     <string name="verify_code_empty">Please enter authentication code</string>
+    <string name="register_fail">Register fail!</string>
+    <string name="email_exists">Email is exists!</string>
 
     <!-- Profile -->
     <string name="setup_profile">Profile Setting</string>
     <string name="birthday_value_is_invalid">Invalid birthday value.</string>
     <string name="gender_is_invalid">Gender is blank.</string>
+    <string name="user_name_is_invalid">Please input name</string>
+    <string name="email_is_empty_message">please input email</string>
+    <string name="password_is_empty_message">please in put pass</string>
+    <string name="password_out_of_range">pass word length is from 6 to 12</string>
+    <string name="retype_password_is_not_the_same">pass word and confirm pass not same</string>
 
     <!-- Send code activity -->
     <string name="title_send_code">Authentication code</string>

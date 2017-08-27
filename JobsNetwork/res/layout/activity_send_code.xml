@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:singleLine="true"
             android:maxLines="1"
             android:text="@string/type_verify_code" />
 
@@ -27,7 +26,7 @@
             android:id="@+id/input_verify_code"
             style="@style/edit_text_primary"
             android:layout_width="0dp"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:layout_gravity="center"
             android:hint="@string/enter_code_hint"
             android:layout_height="match_parent"

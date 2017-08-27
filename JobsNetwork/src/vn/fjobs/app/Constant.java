@@ -5,6 +5,7 @@ public class Constant {
     /*********************** Request ************************/
     public static final int LOADER_LOGIN                            = 101;
     public static final int LOADER_LOGIN_FREE                       = 102;
+    public static final int LOADER_REGISTER                         = 103;
 
     /*********************** Result request Code ************************/
     public static final int RESULT_EXIT                             = 100;
@@ -17,6 +18,10 @@ public class Constant {
     public static final int MAX_PASSWORD_LENGTH                     = 12;
     public static final int GENDER_MALE                             = 0;
     public static final int GENDER_FEMALE                           = 1;
+
+    public static final int USER_CANDIDATE_FREE                     = 0;
+    public static final int USER_CANDIDATE                          = 1;
+    public static final int USER_RECRUITER                          = 2;
     public static final String DATE_FORMAT_DISPLAY                  = "yyyy/MM/dd";
 
 }

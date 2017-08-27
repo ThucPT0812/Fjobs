@@ -16,6 +16,7 @@ public class User implements Serializable {
     private Date birthday;
     private int gender = Constant.GENDER_MALE;
     private String avatar;
+    public int typeUser = Constant.USER_CANDIDATE_FREE;
     private boolean isReceiveEmailNotification = false;
 
     public User() {
@@ -92,6 +93,14 @@ public class User implements Serializable {
 
     public void setReceiveEmailNotification(boolean receiveEmailNotification) {
         isReceiveEmailNotification = receiveEmailNotification;
+    }
+
+    public int getTypeUser() {
+        return typeUser;
+    }
+
+    public void setTypeUser(int typeUser) {
+        this.typeUser = typeUser;
     }
 
     @Override
