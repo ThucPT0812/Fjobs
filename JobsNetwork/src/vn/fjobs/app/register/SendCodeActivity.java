@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import co.core.imageloader.NImageLoader;
 import project.fjobs.R;
 import vn.fjobs.base.activities.BaseAppActivity;
 import vn.fjobs.base.view.customeview.ErrorApiDialog;
@@ -68,5 +69,10 @@ public class SendCodeActivity extends BaseAppActivity implements View.OnClickLis
     @Override
     public int getContentFrame() {
         return 0;
+    }
+
+    @Override
+    public NImageLoader getImageLoader() {
+        return null;
     }
 }

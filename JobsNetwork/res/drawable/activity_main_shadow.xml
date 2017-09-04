@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <gradient
+        android:angle="180"
+        android:centerColor="@color/shadow_main_activity_center"
+        android:endColor="@color/shadow_main_activity_end"
+        android:startColor="@color/shadow_main_activity_start" />
+
+</shape>

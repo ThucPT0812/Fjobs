@@ -24,7 +24,7 @@ public class Config{
     /**
      * Debug mode for (true: show log, throw exception, show toast)
      */
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
     // Main server
     public static String SERVER_URL;
 

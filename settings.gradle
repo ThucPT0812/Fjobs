@@ -1,2 +1,4 @@
-include ':JobsNetwork', ':okhttp'
+include ':JobsNetwork', ':okhttp', ':slidingmenu', ':core'
 project(':okhttp').projectDir = new File('third party/okhttp')
+project(':slidingmenu').projectDir = new File('third party/slidingmenu')
+project(':core').projectDir = new File('third party/core')

@@ -53,8 +53,8 @@ public abstract class BaseAppFragment extends NFragment {
             slidingMenu = (CustomSlidingMenu) context;
         }
 
-        if (pageFragmentHost != null && pageFragmentHost instanceof AppFragmentHost) {
-            api = ((AppFragmentHost) pageFragmentHost).getDfeApi();
+        if (mPageFragmentHost != null && mPageFragmentHost instanceof AppFragmentHost) {
+            api = ((AppFragmentHost) mPageFragmentHost).getDfeApi();
         }
     }
 
@@ -92,7 +92,7 @@ public abstract class BaseAppFragment extends NFragment {
         super.onActivityCreated(savedInstanceState);
 
         if (actionbar != null) {
-            actionbar.initialize(navigationManager, this);
+            actionbar.initialize(mNavigationManager, this);
         }
     }
 

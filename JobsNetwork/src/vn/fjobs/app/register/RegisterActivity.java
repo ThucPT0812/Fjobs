@@ -21,6 +21,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import co.core.imageloader.NImageLoader;
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
 import vn.fjobs.app.common.connection.Response;
@@ -381,5 +382,10 @@ public class RegisterActivity extends BaseAppActivity implements View.OnClickLis
 
     private void registerSuccess(RegisterResponse registerResponse){
         gotoActivitySendCode();
+    }
+
+    @Override
+    public NImageLoader getImageLoader() {
+        return null;
     }
 }

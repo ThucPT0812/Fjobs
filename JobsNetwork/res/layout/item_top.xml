@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_micro"
+    android:background="@drawable/bg_item_top">
+
+
+    <ImageView
+        android:id="@+id/item_top_banner_company"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_top_banner_height"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/item_top_banner_gradient_bg"
+        android:background="@drawable/banner_item_top"/>
+
+    <vn.fjobs.base.view.customeview.CircleImageView
+        android:id="@+id/item_top_logo_company"
+        android:layout_width="@dimen/item_top_logo"
+        android:layout_height="@dimen/item_top_logo"
+        android:layout_marginLeft="@dimen/space_normal"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_centerVertical="true"
+        android:src="@drawable/dummy_logo_company" />
+
+    <TextView
+        android:id="@+id/item_top_name_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_top_logo_company"
+        android:layout_toEndOf="@+id/item_top_logo_company"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/space_large"
+        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginTop="@dimen/space_largest"
+        android:textSize="@dimen/larger_text"
+        android:text="@string/name_company"/>
+
+    <TextView
+        android:id="@+id/item_top_company_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_top_logo_company"
+        android:layout_toEndOf="@+id/item_top_logo_company"
+        android:layout_below="@+id/item_top_name_company"
+        android:layout_marginLeft="@dimen/space_large"
+        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginTop="@dimen/space_smallest"
+        android:layout_marginRight="@dimen/space_large"
+        android:textColor="@color/white"
+        android:textSize="@dimen/smaller_text"
+        android:text="@string/des_company"/>
+</RelativeLayout>

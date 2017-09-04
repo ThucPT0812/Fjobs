@@ -6,9 +6,11 @@
     <string name="common_loading">loading…</string>
     <string name="waiting">loading…</string>
     <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
     <string name="alert">Warning</string>
     <string name="msg_common_password_is_incorrect">E-mail address or password is wrong.</string>
     <string name="common_yes">Yes</string>
+    <string name="common_no">No</string>
     <string name="common_birthday">Birth day</string>
     <string name="common_gender">Gender</string>
     <string name="common_man">Male</string>
@@ -17,6 +19,7 @@
     <string name="common_candidate">Candidate</string>
     <string name="common_recruiter">Recruiter</string>
     <string name="common_image_des">Image description</string>
+    <string name="message_end_app">Quit the application?</string>
 
     <!-- Screen SignUp -->
     <string name="signup_sign_up">Start right away（Free）</string>
@@ -74,4 +77,11 @@
     <string name="type_verify_code">Code</string>
     <string name="enter_code_hint">Enter here</string>
 
+    <!-- Menu left -->
+    <string name="near_work">Near work</string>
+
+    <string name="trouble_notification">Problem</string>
+    <!-- Item top -->
+    <string name="name_company">Company Name</string>
+    <string name="des_company">Company Descriptions</string>
 </resources>

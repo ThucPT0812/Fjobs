@@ -3,6 +3,7 @@ package vn.fjobs.app.splash;
 import android.content.Intent;
 import android.os.Bundle;
 
+import co.core.imageloader.NImageLoader;
 import project.fjobs.R;
 import vn.fjobs.app.firstscreen.SignUpActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
@@ -26,5 +27,10 @@ public class SplashActivity extends BaseAppActivity{
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public NImageLoader getImageLoader() {
+        return null;
     }
 }

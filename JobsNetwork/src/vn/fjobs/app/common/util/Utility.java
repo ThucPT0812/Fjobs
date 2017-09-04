@@ -3,8 +3,12 @@ package vn.fjobs.app.common.util;
 import android.app.Activity;
 import android.content.Context;
 import android.os.IBinder;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.security.MessageDigest;
 import java.util.regex.Matcher;
@@ -41,6 +45,34 @@ public class Utility {
         IBinder iBinder = view.getWindowToken();
         if (iBinder != null)
             inputMethodManager.hideSoftInputFromWindow(iBinder, 0);
+    }
+
+    public static void hideKeyboard(final Activity activity, View view) {
+        final Context mContext = activity;
+        if (activity == null) {
+            return;
+        }
+
+        // Set up touch listener for non-text box views to hide keyboard.
+        if (!(view instanceof EditText) && !(view instanceof Button)) {
+            view.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard(mContext);
+                    return false;
+                }
+            });
+        }
+
+        // If a layout container, iterate over children and seed recursion.
+        if (view instanceof ViewGroup) {
+            int size = ((ViewGroup) view).getChildCount();
+            for (int i = 0; i < size; i++) {
+                View innerView = ((ViewGroup) view).getChildAt(i);
+                hideKeyboard(activity, innerView);
+            }
+        }
     }
 
     public static String encryptPassword(String unencryptedPassword) {

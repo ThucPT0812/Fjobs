@@ -1,12 +1,14 @@
 package vn.fjobs.app.login;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import co.core.imageloader.NImageLoader;
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
 import vn.fjobs.app.common.connection.Response;
@@ -14,6 +16,7 @@ import vn.fjobs.app.common.connection.ResponseData;
 import vn.fjobs.app.common.util.Utility;
 import vn.fjobs.app.login.request.LoginRequest;
 import vn.fjobs.app.login.response.LoginResponse;
+import vn.fjobs.app.main.MainActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
 import vn.fjobs.base.api.ResponseReceiver;
 import vn.fjobs.base.view.customeview.ErrorApiDialog;
@@ -161,6 +164,12 @@ public class LoginActivity extends BaseAppActivity implements ResponseReceiver, 
     }
 
     private void loginSuccess(LoginResponse loginResponse) {
+        startActivityForResult(new Intent(this, MainActivity.class), Constant.REQUEST_EXIT);
+        customFinishActivity();
+    }
 
+    @Override
+    public NImageLoader getImageLoader() {
+        return null;
     }
 }

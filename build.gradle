@@ -32,9 +32,13 @@ ext {
     buildToolsVersion = '25.0.0'
 
     // App dependencies
+    supportLibraryVersion = '25.3.1'
+
+    // App dependencies
     okHTTPVersion = "3.8.0"
     gsonVersion = "2.8.0"
     multidexVersion = "1.0.1"
     googleAuthVersion = "9.0.0"
     facebookVersion = "4.23.0"
+    junitVersion = '4.12'
 }

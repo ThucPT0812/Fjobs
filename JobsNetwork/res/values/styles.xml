@@ -100,6 +100,23 @@
         <item name="android:paddingRight">@dimen/space_large</item>
     </style>
 
+    <style name="actionbar_title.top">
+        <item name="android:textSize">@dimen/larger_text</item>
+    </style>
+
+    <style name="actionbar_badge" parent="text_small">
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">@dimen/micro_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lines">1</item>
+        <item name="android:layout_width">@dimen/size_notification</item>
+        <item name="android:layout_height">@dimen/size_notification</item>
+        <item name="android:layout_marginBottom">@dimen/space_normal</item>
+        <item name="android:layout_marginLeft">@dimen/space_normal</item>
+        <item name="android:background">@drawable/bg_notification</item>
+    </style>
+
     <!--==================== Style Edit Text =========================-->
 
     <style name="edit_text_list_top" parent="@style/edit_text_primary">
@@ -143,6 +160,37 @@
         <item name="android:textSize">@dimen/large_text</item>
         <item name="android:textColor">@color/basic_text_color</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="text_view_accent" parent="@style/text_view_default">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_view_panel" parent="text_normal">
+        <item name="android:layout_marginTop">@dimen/space_micro</item>
+        <item name="android:layout_marginBottom">@dimen/space_micro</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:textColor">@color/basic_text_color</item>
+    </style>
+
+    <style name="badge_textview" parent="text_small">
+        <item name="android:layout_width">@dimen/space_largest</item>
+        <item name="android:layout_height">@dimen/space_largest</item>
+        <item name="android:layout_marginLeft">@dimen/space_larger</item>
+        <item name="android:background">@drawable/bg_notification</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/space_micro</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/micro_text</item>
+    </style>
+
+    <style name="text_type_sliding_menu_right_item_notification" parent="text_small">
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">@dimen/micro_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lines">1</item>
     </style>
 
     <!-- ===================== Style list ================================ -->

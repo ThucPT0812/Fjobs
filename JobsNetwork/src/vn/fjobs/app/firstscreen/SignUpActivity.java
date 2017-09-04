@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import co.core.imageloader.NImageLoader;
 import project.fjobs.R;
 import vn.fjobs.app.Constant;
 import vn.fjobs.app.common.connection.Response;
@@ -39,6 +40,8 @@ import vn.fjobs.app.common.util.LogUtils;
 import vn.fjobs.app.firstscreen.request.LoginFreeRequest;
 import vn.fjobs.app.firstscreen.response.LoginFreeResponse;
 import vn.fjobs.app.login.LoginActivity;
+import vn.fjobs.app.login.response.LoginResponse;
+import vn.fjobs.app.main.MainActivity;
 import vn.fjobs.app.register.RegisterActivity;
 import vn.fjobs.base.activities.BaseAppActivity;
 import vn.fjobs.base.api.ResponseReceiver;
@@ -115,7 +118,8 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.login_free:
-                loginFree();
+//                loginFree();
+                loginSuccess();
                 break;
             case R.id.activity_signup_btn_login:
                 startCustomActivityForResult(new Intent(this, LoginActivity.class));
@@ -288,12 +292,19 @@ public class SignUpActivity extends BaseAppActivity implements OnClickListener, 
         if(requestId == Constant.LOADER_LOGIN_FREE){
             if(response.getCode() == Response.SERVER_SUCCESS){
                 LoginFreeResponse loginFreeResponse = (LoginFreeResponse) response;
-                loginSuccess(loginFreeResponse);
+//                loginSuccess(loginFreeResponse);
+                loginSuccess();
             }
         }
     }
 
-    private void loginSuccess(LoginFreeResponse response){
+    private void loginSuccess(){
+        startActivityForResult(new Intent(this, MainActivity.class), Constant.REQUEST_EXIT);
+        customFinishActivity();
+    }
 
+    @Override
+    public NImageLoader getImageLoader() {
+        return null;
     }
 }

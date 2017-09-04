@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_notification_content"
+    style="@style/text_view_accent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:padding="@dimen/space_larger"
+    android:drawablePadding="@dimen/space_larger"
+    android:drawableRight="@drawable/notification_bottom_arrow"
+    android:drawableEnd="@drawable/notification_bottom_arrow"
+    android:drawableLeft="@drawable/ic_notifi_message"
+    android:drawableStart="@drawable/ic_notifi_message"
+    android:background="@color/base_color"
+    android:text="@string/trouble_notification"/>

@@ -9,10 +9,13 @@
     <dimen name="space_small">8dp</dimen>
     <dimen name="space_smaller">6dp</dimen>
     <dimen name="space_smallest">4dp</dimen>
+    <dimen name="space_micro">2dp</dimen>
 
+    <dimen name="larger_text">20sp</dimen>
     <dimen name="large_text">18sp</dimen>
     <dimen name="normal_text">16sp</dimen>
     <dimen name="smaller_text">12sp</dimen>
+    <dimen name="micro_text">8sp</dimen>
 
     <dimen name="corner_full">29dp</dimen>
     <dimen name="corner_small">4dp</dimen>
@@ -24,5 +27,14 @@
     <dimen name="border">1dp</dimen>
 
     <dimen name="list_height">48dp</dimen>
+
+    <dimen name="activity_main_shadow_width">10dp</dimen>
+    <dimen name="activity_main_slidingmenu_offset">60dp</dimen>
+    <dimen name="size_notification">18dp</dimen>
+    <dimen name="meetpeople_bottom_panel_height">60dp</dimen>
+
+    <!-- Item top -->
+    <dimen name="item_top_banner_height">90dp</dimen>
+    <dimen name="item_top_logo">60dp</dimen>
 
 </resources>

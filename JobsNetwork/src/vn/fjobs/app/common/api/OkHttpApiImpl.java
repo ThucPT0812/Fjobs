@@ -52,7 +52,7 @@ public class OkHttpApiImpl implements Api {
     }
 
     private void callApi(int requestId, RequestParams baseRequest, ResponseReceiver listener) {
-        LogUtils.d("request", baseRequest.toString());
+        LogUtils.d("request", "Request Data - Api: " + baseRequest.getApi() + "\ndata =" + baseRequest.toString());
         mOkHttpClient.newCall(makeRequest(baseRequest)
                 .tag(requestId)
                 .build())

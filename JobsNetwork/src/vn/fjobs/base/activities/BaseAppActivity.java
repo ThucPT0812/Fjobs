@@ -94,4 +94,9 @@ public abstract class BaseAppActivity extends NActivity implements AppFragmentHo
     }
 
     public abstract int getContentFrame();
+
+    protected void customFinishActivity() {
+        setResult(Constant.RESULT_EXIT);
+        finish();
+    }
 }

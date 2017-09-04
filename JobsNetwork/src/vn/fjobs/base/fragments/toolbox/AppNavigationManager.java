@@ -11,7 +11,7 @@ import co.core.activities.NActivity;
 import co.core.fragments.NavigationManager;
 import project.fjobs.R;
 
-public class AppNavigationManager implements NavigationManager{
+public class AppNavigationManager implements NavigationManager {
 
     protected NActivity mActivity;
     protected final Stack mBackStack = new MainThreadStack();
@@ -140,5 +140,10 @@ public class AppNavigationManager implements NavigationManager{
     @Override
     public void addOnBackStackChangedListener(OnBackStackChangedListener listener) {
         mFragmentManager.addOnBackStackChangedListener(listener);
+    }
+
+    @Override
+    public void removeOnBackStackChangedListener(OnBackStackChangedListener listener) {
+
     }
 }

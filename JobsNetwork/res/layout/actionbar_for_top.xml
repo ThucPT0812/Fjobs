@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/primary">
+
+    <FrameLayout
+        android:id="@+id/frame_img_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/actionbar_left"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image_description"
+            android:paddingBottom="@dimen/space_smallest"
+            android:paddingLeft="@dimen/space_normal"
+            android:paddingRight="@dimen/space_normal"
+            android:paddingTop="@dimen/space_smallest"
+            android:scaleType="center"
+            android:src="@drawable/ic_back" />
+
+        <vn.fjobs.base.view.customeview.BadgeTextView
+            android:id="@+id/badge_notification"
+            style="@style/text_type_sliding_menu_right_item_notification"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_notification"
+            android:gravity="center"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/actionbar_title"
+        style="@style/actionbar_title.top"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/common_app_name" />
+
+    <FrameLayout
+        android:id="@+id/actionbar_right"
+        android:layout_width="?actionBarSize"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image_description"
+            android:paddingBottom="@dimen/space_smallest"
+            android:paddingLeft="@dimen/space_small"
+            android:paddingRight="@dimen/space_small"
+            android:paddingTop="@dimen/space_smallest"
+            android:scaleType="center"
+            android:src="@drawable/nav_message"
+            android:visibility="visible" />
+
+        <vn.fjobs.base.view.customeview.BadgeTextView
+            android:id="@+id/actionbar_chat_badge"
+            style="@style/actionbar_badge"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="visible" />
+    </FrameLayout>
+</LinearLayout>
