@@ -36,5 +36,6 @@
     <!-- Item top -->
     <dimen name="item_top_banner_height">90dp</dimen>
     <dimen name="item_top_logo">60dp</dimen>
+    <dimen name="item_top_icon_view">30dp</dimen>
 
 </resources>

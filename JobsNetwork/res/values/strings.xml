@@ -84,4 +84,13 @@
     <!-- Item top -->
     <string name="name_company">Company Name</string>
     <string name="des_company">Company Descriptions</string>
+    <string name="text_view">32 Lượt xem</string>
+    <string name="text_work">Summary</string>
+    <string name="text_des_work">CAE (Computer Aid Engineering) is a technology concerned with the use of computer systems to analyze CAD geometry, allowing designers to simulate and study how the product will behave so that the design can be validated, refined and, optimized. </string>
+    <string name="text_position">Cách bạn 10km</string>
+    <string name="text_date">Ngày đăng tuyển: 17/07/2017</string>
+
+    <!-- Item bottom -->
+    <string name="work_profile">Work profile</string>
+    <string name="share">Share</string>
 </resources>

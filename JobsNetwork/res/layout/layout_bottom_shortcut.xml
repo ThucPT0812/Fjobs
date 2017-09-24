@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shortcut_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/meetpeople_bottom_panel_height"
+    android:background="@color/secondary_background"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:paddingBottom="@dimen/space_smallest"
+    android:paddingTop="@dimen/space_smallest">
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/normal_text"
+            android:drawableTop="@drawable/ic_position"
+            android:textColor="@color/black"
+            android:text="@string/near_work"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/normal_text"
+            android:drawableTop="@drawable/ic_work_profle"
+            android:textColor="@color/black"
+            android:text="@string/work_profile"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/normal_text"
+            android:drawableTop="@drawable/ic_share"
+            android:textColor="@color/black"
+            android:text="@string/share"/>
+    </RelativeLayout>
+</LinearLayout>
